@@ -7,6 +7,7 @@ import { api } from "../../convex/_generated/api";
 import HeaderProfileBtn from "./HeaderProfileBtn";
 import ThemeSelector from "./ThemeSelector";
 import LanguageSelector from "./LanguageSelector";
+import RunButton from "./RunButton";
 
 async function Header() {
   const convex = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
@@ -92,7 +93,7 @@ async function Header() {
           )}
 
           <SignedIn>
-            {/* <RunButton /> */}
+            <RunButton />
           </SignedIn>
 
           <div className="pl-3 border-l border-gray-800">
