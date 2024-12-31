@@ -8,7 +8,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const { language, setLanguage } = useCodeEditorStore();
   const currentLanguageObj = LANGUAGE_CONFIG[language];
   const dropdownRef = useRef<HTMLDivElement>(null);

@@ -8,14 +8,16 @@ import { Editor } from "@monaco-editor/react";
 import { motion } from "framer-motion";
 import { RotateCcwIcon, ShareIcon, TypeIcon } from "lucide-react";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { EditorPanelSkeleton } from "./EditorPanelSkeleton";
+import ShareSnippetDialog from "./ShareSnippetDialog";
 
 function EditorPanel() {
   const clerk = useClerk();
   const { language, theme, fontSize, editor, setFontSize, setEditor } =
     useCodeEditorStore();
   const mounted = useMounted();
+  const [isShareDialogOpen, setIsShareDialogOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const savedCode = localStorage.getItem(`editor-code-${language}`);
@@ -102,7 +104,7 @@ function EditorPanel() {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              onClick={() => {}}
+              onClick={() => setIsShareDialogOpen(true)}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg overflow-hidden bg-gradient-to-r
                from-blue-500 to-blue-600 opacity-90 hover:opacity-100 transition-opacity"
             >
@@ -149,6 +151,9 @@ function EditorPanel() {
           {!clerk.loaded && <EditorPanelSkeleton />}
         </div>
       </div>
+      {isShareDialogOpen && (
+        <ShareSnippetDialog onClose={() => setIsShareDialogOpen(false)} />
+      )}
     </div>
   );
 }
