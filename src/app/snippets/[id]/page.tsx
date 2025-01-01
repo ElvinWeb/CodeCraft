@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import { api } from "../../../../convex/_generated/api";
 import { Id } from "../../../../convex/_generated/dataModel";
 import SnippetLoadingSkeleton from "@/components/skeletons/SnippetLoadingSkeleton";
-import NavigationHeader from "@/components/headers/SnippetsHeader";
+import NavigationHeader from "@/components/headers/NavigationHeader";
 import { Clock, Code, MessageSquare, User } from "lucide-react";
 import { Editor } from "@monaco-editor/react";
 import { defineMonacoThemes, LANGUAGE_CONFIG } from "@/constants";

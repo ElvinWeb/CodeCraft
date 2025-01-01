@@ -4,7 +4,7 @@ import { useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import { useState } from "react";
 import SnippetsPageSkeleton from "@/components/skeletons/SnippetsPageSkeleton";
-import SnippetsHeader from "@/components/headers/SnippetsHeader";
+import SnippetsHeader from "@/components/headers/NavigationHeader";
 import { AnimatePresence, motion } from "framer-motion";
 import { BookOpen, Code, Grid, Layers, Search, Tag, X } from "lucide-react";
 import SnippetCard from "@/components/SnippetCard";

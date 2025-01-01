@@ -1,4 +1,4 @@
-import NavigationHeader from "@/components/headers/SnippetsHeader";
+import NavigationHeader from "@/components/headers/NavigationHeader";
 
 function SnippetLoadingSkeleton() {
   return (
