@@ -10,12 +10,12 @@ import Link from "next/link";
 import { Clock, Trash2, User } from "lucide-react";
 import Image from "next/image";
 import toast from "react-hot-toast";
-import StarButton from "./StarButton";
+import StarButton from "./buttons/StarButton";
 
 function SnippetCard({ snippet }: { snippet: Snippet }) {
   const { user } = useUser();
   const deleteSnippet = useMutation(api.snippets.deleteSnippet);
-  const [isDeleting, setIsDeleting] = useState(false);
+  const [isDeleting, setIsDeleting] = useState<boolean>(false);
 
   const handleDelete = async () => {
     setIsDeleting(true);

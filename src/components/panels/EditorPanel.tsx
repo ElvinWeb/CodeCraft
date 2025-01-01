@@ -9,8 +9,8 @@ import { motion } from "framer-motion";
 import { RotateCcwIcon, ShareIcon, TypeIcon } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { EditorPanelSkeleton } from "./EditorPanelSkeleton";
-import ShareSnippetDialog from "./ShareSnippetDialog";
+import { EditorPanelSkeleton } from "../skeletons/EditorPanelSkeleton";
+import ShareSnippetDialog from "../ShareSnippetDialog";
 
 function EditorPanel() {
   const clerk = useClerk();

@@ -3,15 +3,15 @@
 import { useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import { useState } from "react";
-import SnippetsPageSkeleton from "@/components/SnippetsPageSkeleton";
-import NavigationHeader from "@/components/NavigationHeader";
+import SnippetsPageSkeleton from "@/components/skeletons/SnippetsPageSkeleton";
+import SnippetsHeader from "@/components/headers/SnippetsHeader";
 import { AnimatePresence, motion } from "framer-motion";
 import { BookOpen, Code, Grid, Layers, Search, Tag, X } from "lucide-react";
 import SnippetCard from "@/components/SnippetCard";
 
 function SnippetsPage() {
   const snippets = useQuery(api.snippets.getSnippets);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null);
   const [view, setView] = useState<"grid" | "list">("grid");
 
@@ -19,7 +19,7 @@ function SnippetsPage() {
   if (snippets === undefined) {
     return (
       <div className="min-h-screen">
-        <NavigationHeader />
+        <SnippetsHeader />
         <SnippetsPageSkeleton />
       </div>
     );
@@ -42,7 +42,7 @@ function SnippetsPage() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
-      <NavigationHeader />
+      <SnippetsHeader />
 
       <div className="relative max-w-7xl mx-auto px-4 py-12">
         {/* Hero */}

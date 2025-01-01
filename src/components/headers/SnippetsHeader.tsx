@@ -1,9 +1,9 @@
 import { Blocks, Code2, Sparkles } from "lucide-react";
 import { SignedOut } from "@clerk/nextjs";
-import HeaderProfileBtn from "./HeaderProfileBtn";
+import HeaderProfileBtn from "../buttons/HeaderProfileBtn";
 import Link from "next/link";
 
-function NavigationHeader() {
+function SnippetsHeader() {
   return (
     <div className="sticky top-0 z-50 w-full border-b border-gray-800/50 bg-gray-950/80 backdrop-blur-xl backdrop-saturate-150">
       <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5" />
@@ -79,4 +79,4 @@ function NavigationHeader() {
   );
 }
 
-export default NavigationHeader;
+export default SnippetsHeader;
