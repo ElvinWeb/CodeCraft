@@ -1,4 +1,5 @@
 "use client";
+
 import { LANGUAGE_CONFIG } from "@/constants";
 import useMounted from "@/hooks/useMounted";
 import { useCodeEditorStore } from "@/store/useCodeEditorStore";
