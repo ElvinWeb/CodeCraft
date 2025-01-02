@@ -1,31 +1,21 @@
 "use client";
+import StarButton from "@/components/buttons/StarButton";
+import CodeBlock from "@/components/CodeBlock";
+import NavigationHeader from "@/components/headers/NavigationHeader";
+import ProfileHeader from "@/components/headers/ProfileHeader";
+import ProfileHeaderSkeleton from "@/components/skeletons/ProfileHeaderSkeleton";
+import { TABS } from "@/constants";
 import { useUser } from "@clerk/nextjs";
 import { usePaginatedQuery, useQuery } from "convex/react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronRight, Clock, Code, Loader2, Star } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { api } from "../../../convex/_generated/api";
-import NavigationHeader from "@/components/headers/NavigationHeader";
-import ProfileHeaderSkeleton from "@/components/skeletons/ProfileHeaderSkeleton";
-import ProfileHeader from "@/components/headers/ProfileHeader";
-import { ChevronRight, Clock, Code, ListVideo, Loader2, Star } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-import StarButton from "@/components/buttons/StarButton";
-import CodeBlock from "@/components/CodeBlock";
 
-const TABS = [
-  {
-    id: "executions",
-    label: "Code Executions",
-    icon: ListVideo,
-  },
-  {
-    id: "starred",
-    label: "Starred Snippets",
-    icon: Star,
-  },
-];
+
 
 function ProfilePage() {
   const { user, isLoaded } = useUser();

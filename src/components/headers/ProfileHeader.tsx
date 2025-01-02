@@ -11,32 +11,7 @@ import {
   Zap,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { Id } from "../../../convex/_generated/dataModel";
-import { UserResource } from "@clerk/types";
-
-interface ProfileHeaderProps {
-  userStats: {
-    totalExecutions: number;
-    languagesCount: number;
-    languages: string[];
-    last24Hours: number;
-    favoriteLanguage: string;
-    languageStats: Record<string, number>;
-    mostStarredLanguage: string;
-  };
-  userData: {
-    _id: Id<"users">;
-    _creationTime: number;
-    proSince?: number | undefined;
-    lemonSqueezyCustomerId?: string | undefined;
-    lemonSqueezyOrderId?: string | undefined;
-    name: string;
-    userId: string;
-    email: string;
-    isPro: boolean;
-  };
-  user: UserResource;
-}
+import { ProfileHeaderProps } from "@/types";
 
 function ProfileHeader({ userStats, userData, user }: ProfileHeaderProps) {
   const starredSnippets = useQuery(api.snippets.getStarredSnippets);

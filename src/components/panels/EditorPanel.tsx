@@ -1,6 +1,7 @@
 "use client";
 
-import { defineMonacoThemes, LANGUAGE_CONFIG } from "@/constants";
+import { LANGUAGE_CONFIG } from "@/constants";
+import { defineMonacoThemes } from "@/utils";
 import useMounted from "@/hooks/useMounted";
 import { useCodeEditorStore } from "@/store/useCodeEditorStore";
 import { useClerk } from "@clerk/nextjs";

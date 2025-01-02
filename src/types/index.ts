@@ -1,5 +1,6 @@
 import { Monaco } from "@monaco-editor/react";
 import { Id } from "../../convex/_generated/dataModel";
+import { UserResource } from "@clerk/types";
 
 export interface Theme {
   id: string;
@@ -63,4 +64,47 @@ export interface Snippet {
   code: string;
   title: string;
   userName: string;
+}
+
+export interface ProfileHeaderProps {
+  userStats: {
+    totalExecutions: number;
+    languagesCount: number;
+    languages: string[];
+    last24Hours: number;
+    favoriteLanguage: string;
+    languageStats: Record<string, number>;
+    mostStarredLanguage: string;
+  };
+  userData: {
+    _id: Id<"users">;
+    _creationTime: number;
+    proSince?: number | undefined;
+    lemonSqueezyCustomerId?: string | undefined;
+    lemonSqueezyOrderId?: string | undefined;
+    name: string;
+    userId: string;
+    email: string;
+    isPro: boolean;
+  };
+  user: UserResource;
+}
+
+export interface CommentProps {
+  comment: {
+    _id: Id<"snippetComments">;
+    _creationTime: number;
+    userId: string;
+    userName: string;
+    snippetId: Id<"snippets">;
+    content: string;
+  };
+  onDelete: (commentId: Id<"snippetComments">) => void;
+  isDeleting: boolean;
+  currentUserId?: string;
+}
+
+export interface CommentFormProps {
+  onSubmit: (comment: string) => Promise<void>;
+  isSubmitting: boolean;
 }

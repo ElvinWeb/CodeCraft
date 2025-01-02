@@ -1,11 +1,7 @@
 import { CodeIcon, SendIcon } from "lucide-react";
 import { useState } from "react";
 import CommentContent from "./CommentContent";
-
-interface CommentFormProps {
-  onSubmit: (comment: string) => Promise<void>;
-  isSubmitting: boolean;
-}
+import { CommentFormProps } from "@/types";
 
 function CommentForm({ isSubmitting, onSubmit }: CommentFormProps) {
   const [comment, setComment] = useState("");

@@ -1,5 +1,12 @@
-import { Monaco } from "@monaco-editor/react";
 import { Theme } from "@/types";
+import {
+  Boxes,
+  Globe,
+  ListVideo,
+  RefreshCcw,
+  Shield,
+  Star,
+} from "lucide-react";
 
 type LanguageConfig = Record<
   string,
@@ -419,19 +426,62 @@ export const THEME_DEFINITONS = {
   },
 };
 
+export const ENTERPRISE_FEATURES = [
+  {
+    icon: Globe,
+    label: "Global Infrastructure",
+    desc: "Lightning-fast execution across worldwide edge nodes",
+  },
+  {
+    icon: Shield,
+    label: "Enterprise Security",
+    desc: "Bank-grade encryption and security protocols",
+  },
+  {
+    icon: RefreshCcw,
+    label: "Real-time Sync",
+    desc: "Instant synchronization across all devices",
+  },
+  {
+    icon: Boxes,
+    label: "Unlimited Storage",
+    desc: "Store unlimited snippets and projects",
+  },
+];
 
-
-// Helper function to define themes in Monaco
-export const defineMonacoThemes = (monaco: Monaco) => {
-  Object.entries(THEME_DEFINITONS).forEach(([themeName, themeData]) => {
-    monaco.editor.defineTheme(themeName, {
-      base: themeData.base,
-      inherit: themeData.inherit,
-      rules: themeData.rules.map((rule) => ({
-        ...rule,
-        foreground: rule.foreground,
-      })),
-      colors: themeData.colors,
-    });
-  });
+export const FEATURES = {
+  development: [
+    "Advanced AI",
+    "Custom theme builder",
+    "Integrated debugging tools",
+    "Multi-language support",
+  ],
+  collaboration: [
+    "Real-time pair programming",
+    "Team workspaces",
+    "Version control integration",
+    "Code review tools",
+  ],
+  deployment: [
+    "One-click deployment",
+    "CI/CD integration",
+    "Container support",
+    "Custom domain mapping",
+  ],
 };
+
+export const TABS = [
+  {
+    id: "executions",
+    label: "Code Executions",
+    icon: ListVideo,
+  },
+  {
+    id: "starred",
+    label: "Starred Snippets",
+    icon: Star,
+  },
+];
+
+export const CHEKOUT_URL =
+  "https://code.lemonsqueezy.com/buy/8e3f43e1-12ff-4f73-bbe6-ab470a077097";
